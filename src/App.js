@@ -1,11 +1,10 @@
-import React from 'react';
+import React,{ useContext }  from 'react';
 import logo from './logo.svg';
 import './App.css';
-import useMiddleware from "react-usemiddleware";
-import {initState, loadAction, middlewares, reducer} from "./state";
+import {StateContext,loadAction} from "./state";
 
 function App() {
-  const [state, dispatch] = useMiddleware(reducer, initState, middlewares);
+  const [state, dispatch] = useContext(StateContext)();
 
   return (
     <div className="App">

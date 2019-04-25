@@ -1,5 +1,6 @@
 import thunk from "redux-thunk";
 import { createLogger } from "redux-logger";
+import {createContext} from "react";
 
 export const initState = {
   data: "not loaded"
@@ -29,6 +30,7 @@ const loadedAction = payload => {
 
 const logger = createLogger();
 export const middlewares = [thunk, logger];
+export const StateContext = createContext(null);
 
 
 
