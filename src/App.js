@@ -1,10 +1,11 @@
-import React,{ useContext }  from 'react';
+import React  from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {StateContext,loadAction} from "./state";
+import {getState} from "./helperComponent/stateProvider";
+import {loadAction} from "./state";
 
 function App() {
-  const [state, dispatch] = useContext(StateContext)();
+  const [state, dispatch] = getState();
 
   return (
     <div className="App">

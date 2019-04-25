@@ -3,20 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import useMiddleware from "react-usemiddleware";
 
 
-import {initState, middlewares, reducer,StateContext} from "./state";
-
+import {initState, middlewares, reducer} from "./state";
+import {StateProvider} from "./helperComponent/stateProvider";
 
 
 ReactDOM.render(
-  <StateContext.Provider value={()=>useMiddleware(reducer, initState, middlewares)}>
-    < App />
-  </StateContext.Provider>
-
-
-
+  <StateProvider initialState={initState} reducer={reducer} middlewares={middlewares}>
+    <App/>
+  </StateProvider>
   , document.getElementById('root')
 )
 ;
