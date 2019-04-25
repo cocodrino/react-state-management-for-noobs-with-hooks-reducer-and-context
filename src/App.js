@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import useMiddleware from "react-usemiddleware";
+import {initState, loadAction, middlewares, reducer} from "./state";
 
 function App() {
+  const [state, dispatch] = useMiddleware(reducer, initState, middlewares);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +22,8 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={() => dispatch(loadAction())}>LOAD</button>
+        <span>{state.data}</span>
       </header>
     </div>
   );
