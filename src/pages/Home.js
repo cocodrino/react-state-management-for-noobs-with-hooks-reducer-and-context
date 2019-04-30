@@ -1,10 +1,12 @@
 import React  from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
 import {getState} from "./helperComponent/stateProvider";
-import {loadAction} from "./state";
 
-function App() {
+
+
+
+function Home() {
   const [state, dispatch] = getState();
 
   return (
@@ -22,6 +24,8 @@ function App() {
         >
           Learn React
         </a>
+
+
         <button onClick={() => dispatch(loadAction())}>LOAD</button>
         <span>{state.data}</span>
       </header>
@@ -29,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

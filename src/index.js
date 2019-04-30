@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Home from './pages/Home';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.css';
+import {browserrouter as router, Route, route, Router} from "react-router-dom";
+import MyNav from './components/navbar.js'
+import LoginRegister from './pages/loginRegister'
+import history from './history';
+import {Login,Register} from "./pages/LoginOrRegister";
+
+
 
 
 import {initState, middlewares, reducer} from "./state";
@@ -11,7 +19,17 @@ import {StateProvider} from "./helperComponent/stateProvider";
 
 ReactDOM.render(
   <StateProvider initialState={initState} reducer={reducer} middlewares={middlewares}>
-    <App/>
+    <>
+      <MyNav/>
+      <Router history={history}>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/login" component={Login}/>
+        <Route exact path="/registro" component={Register}/>
+        <Route path="/user/:id/notes" component={Register}/>
+
+      </Router>
+    </>
+
   </StateProvider>
   , document.getElementById('root')
 )
