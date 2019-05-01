@@ -1,7 +1,9 @@
 import React from 'react';
-import {useGlobal} from "reactn";
 import {getState} from "../helperComponent/stateProvider";
 import {createUser, loginUser} from "../state";
+import {Button} from "reactstrap";
+
+let util = require("util");
 
 // PODRIAMOS CREAR UN SOLO COMPONENTE QUE DE ACUERDO AL PROP HAGA REGISTRO O LOGIN
 // NO OBSTANTE, PARA NO COMPLICAR EL CÖDIGO VOY A MANTENERLO COMO DOS COMPONENTES
@@ -12,7 +14,8 @@ export function Register(props) {
   const [state, dispatch] = getState();
 
   if (state.token) {
-    props.history.push(`/user/${state.id}/notes`);
+    console.log("estado es\n"+ state);
+    props.history.push(`/user/${state.userRegistered}/notes`);
   }
 
   let handleClick = () => {
@@ -24,11 +27,11 @@ export function Register(props) {
   let mensaje =  "Por favor ingrese sus datos para el Registro";
 
   return (
-    <div className="app">
+    <div className="App-header">
       <h2>{mensaje}</h2>
       <input type="text" ref={username} placeholder="nombre de usuario"/>
-      <input type="text" ref={password} placeholder="password"/>
-      <button onClick={handleClick}>OK</button>
+      <input type="password" ref={password} placeholder="password"/>
+      <Button size="lg" color="primary" onClick={handleClick}>OK</Button>
     </div>
   )
 }
@@ -41,7 +44,8 @@ export function Login(props) {
 
   // si hay token significa que ya está logueado, no tiene por qué ver esta página, lo redireccionamos al home
   if (state.token) {
-    props.history.push(`/user/${state.id}/notes`);
+    console.log("estado es\n"+ util.inspect(state));
+    props.history.push(`/user/${state.userRegistered}/notes`);
   }
 
   let handleClick = () => {
@@ -53,11 +57,11 @@ export function Login(props) {
   let mensaje =  "Por favor ingrese sus datos para logearse";
 
   return (
-    <div className="app">
+    <div className="App-header">
       <h2>{mensaje}</h2>
       <input type="text" ref={username} placeholder="nombre de usuario"/>
-      <input type="text" ref={password} placeholder="password"/>
-      <button onClick={handleClick}>OK</button>
+      <input type="password" ref={password} placeholder="password"/>
+      <Button color="primary" onClick={handleClick}>OK</Button>
     </div>
   )
 }

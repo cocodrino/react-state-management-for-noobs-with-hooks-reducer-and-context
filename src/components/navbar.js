@@ -53,7 +53,7 @@ export default class MyNav extends React.Component {
     return (
       <div>
 
-        <Navbar color="light" light expand="md">
+        <Navbar color="dark" light expand="md">
           <NavbarBrand href="/">Mi App de Prueba</NavbarBrand>
 
           <Nav className="ml-auto" navbar>

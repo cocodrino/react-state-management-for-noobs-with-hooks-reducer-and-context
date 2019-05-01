@@ -1,14 +1,11 @@
 import React  from 'react';
 import logo from '../logo.svg';
 import '../App.css';
-import {getState} from "./helperComponent/stateProvider";
 
 
 
 
 function Home() {
-  const [state, dispatch] = getState();
-
   return (
     <div className="App">
       <header className="App-header">
@@ -26,8 +23,6 @@ function Home() {
         </a>
 
 
-        <button onClick={() => dispatch(loadAction())}>LOAD</button>
-        <span>{state.data}</span>
       </header>
     </div>
   );

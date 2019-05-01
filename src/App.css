@@ -1,3 +1,9 @@
+html {
+  background-color: #062744;
+  color:white !important;
+  font-family: 'Raleway', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -9,13 +15,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #062744;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: white;
 }
 
@@ -30,4 +36,63 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbar{
+  background: rgba(4,33,61,1);
+  background: -moz-linear-gradient(left, rgba(4,33,61,1) 0%, rgba(22,64,102,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(4,33,61,1)), color-stop(100%, rgba(22,64,102,1)));
+  background: -webkit-linear-gradient(left, rgba(4,33,61,1) 0%, rgba(22,64,102,1) 100%);
+  background: -o-linear-gradient(left, rgba(4,33,61,1) 0%, rgba(22,64,102,1) 100%);
+  background: -ms-linear-gradient(left, rgba(4,33,61,1) 0%, rgba(22,64,102,1) 100%);
+  background: linear-gradient(to right, rgba(4,33,61,1) 0%, rgba(22,64,102,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04213d', endColorstr='#164066', GradientType=1 );
+}
+
+.navbar-brand,.navbar-brand:focus {
+  color: white !important;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+  display: inline;
+}
+
+.App-header input {
+
+  margin: 5px;
+  padding: 7px;
+  border: solid 0px #060505;
+  border-radius: 9px;
+  background-color: #0d3355;
+  color: white;
+}
+
+::placeholder { /* Firefox, Chrome, Opera */
+  color: white;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+
+.alert{
+  margin-bottom: 0 !important;
+}
+
+.nota {
+  font-size: 23px;
+  padding: 10px 150px;
+  margin: 10px 0 10px;
+  border: solid black 0;
+  background-color: #4e00b594;
+  border-radius: 8px;
+}
+
+.add_notes_area {
+  margin-top: 40px;
 }

@@ -12,20 +12,23 @@ import {Login,Register} from "./pages/LoginOrRegister";
 
 
 
+
 import {initState, middlewares, reducer} from "./state";
 import {StateProvider} from "./helperComponent/stateProvider";
 import Notes from "./pages/Notes";
+import Aviso from "./components/aviso";
 
 
 ReactDOM.render(
   <StateProvider initialState={initState} reducer={reducer} middlewares={middlewares}>
     <>
       <MyNav/>
+      <Aviso/>
       <Router history={history}>
         <Route exact path="/" component={Home}/>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/registro" component={Register}/>
-        <Route path="/user/:id/notes" component={Notes}/>
+        <Route path="/user/:user/notes" component={Notes}/>
 
       </Router>
     </>
