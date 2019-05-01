@@ -35,7 +35,9 @@ export const reducer = (state, payload) => {
     case "REMOVE_STORED_USER":
       return {...state, token: null, userRegistered: null};
     case "STORE_ERROR":
-      return {...state, error: util.inspect(payload.error) };
+      let err = payload.error ? util.inspect(payload.error) : payload.error;
+
+      return {...state, error: err};
     default:
       return state;
   }
