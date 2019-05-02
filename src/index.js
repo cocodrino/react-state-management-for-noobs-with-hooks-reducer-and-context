@@ -4,23 +4,20 @@ import './index.css';
 import Home from './pages/Home';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Route, Router} from "react-router-dom";
+import {Route, Router} from "react-router-dom";
 import MyNav from './components/navbar.js'
 import history from './history';
-import {Login,Register} from "./pages/LoginOrRegister";
+import {Login, Register} from "./pages/LoginOrRegister";
 
 
-
-
-
-import {initState, middlewares, reducer} from "./state";
+import {initState, reducer} from "./state";
 import {StateProvider} from "./helperComponent/stateProvider";
 import Notes from "./pages/Notes";
 import Aviso from "./components/aviso";
 
 
 ReactDOM.render(
-  <StateProvider initialState={initState} reducer={reducer} middlewares={middlewares}>
+  <StateProvider initialState={initState} reducer={reducer}>
     <>
       <MyNav/>
       <Aviso/>

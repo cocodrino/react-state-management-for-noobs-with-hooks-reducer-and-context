@@ -9,7 +9,7 @@ import {
 
 
 import {getState} from "../helperComponent/stateProvider";
-import {logout} from "../state";
+
 
 function SignComponente(){
   const [state, dispatch] = getState();
@@ -17,7 +17,7 @@ function SignComponente(){
   // si hay token mostrar el NavLink para salir, sino mostrar los de registrarse o login
   let component = state.token ?
     <NavItem>
-      <NavLink onClick={() => dispatch(logout())}>Salir</NavLink>
+      <NavLink onClick={() =>  dispatch({type: "REMOVE_STORED_USER"})}>Salir</NavLink>
     </NavItem>
     :
     <NavItem>
